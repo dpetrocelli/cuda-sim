@@ -1,10 +1,11 @@
 services:
+  # Servicio 1: GPGPU-Sim (execution-driven). Para los ejercicios 01-04.
+  # Escriben kernel CUDA, compilan, ejecutan -> el simulador intercepta y simula.
   cuda-sim:
     build: .
-    image: sip2026/cuda-sim:latest
+    image: sd2026/cuda-sim:latest
     container_name: cuda-sim
     volumes:
-      # Los pibes editan localmente, el container compila y ejecuta
       - ./examples:/workspace
     working_dir: /workspace
     stdin_open: true
@@ -18,3 +19,16 @@ services:
     #         - driver: nvidia
     #           count: all
     #           capabilities: [gpu]
+
+  # Servicio 2: Accel-Sim (trace-driven). Para el ejercicio 05.
+  # Toma trazas SASS pre-grabadas (de NVIDIA NVBit) y las simula sobre la
+  # microarquitectura virtual. Es la version "moderna" de GPGPU-Sim — mucho
+  # mas rapido y soporta arquitecturas mas nuevas (Turing, Ampere).
+  accel-sim:
+    image: ghcr.io/accel-sim/accel-sim-framework:ubuntu-24.04-cuda-12.8
+    container_name: accel-sim
+    volumes:
+      - ./examples/05-accel-sim:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
