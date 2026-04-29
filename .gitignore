@@ -1,0 +1,12 @@
+# Binarios compilados
+examples/**/vector_add
+examples/**/matrix_mul
+examples/**/*.o
+
+# Archivos generados por GPGPU-Sim al ejecutar
+examples/**/gpgpusim.config
+examples/**/*.icnt
+examples/**/_cuobjdump_*
+examples/**/_ptx_jit_*
+examples/**/gpgpu_inst_stats.txt
+examples/**/*.log

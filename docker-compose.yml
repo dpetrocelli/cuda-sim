@@ -1,0 +1,20 @@
+services:
+  cuda-sim:
+    build: .
+    image: sip2026/cuda-sim:latest
+    container_name: cuda-sim
+    volumes:
+      # Los pibes editan localmente, el container compila y ejecuta
+      - ./examples:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    # Cuando tengamos GPU real (cluster K8s o laptop con NVIDIA),
+    # descomentar la siguiente seccion para usar GPU fisica en lugar del simulador:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
