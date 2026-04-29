@@ -1,10 +1,9 @@
-# CUDA sin GPU — Simulador para SIP 2026 / SD 2026
+# CUDA sin GPU — Simulador para SD 2026
 
 Entorno Docker con **GPGPU-Sim 4.2.1** (febrero 2025) para escribir, compilar y
 ejecutar código CUDA **sin necesidad de tener una placa NVIDIA**. Pensado para
-las cátedras de **Sistemas Distribuidos y Programación Paralela (SD 2026)** y
-**Seminario de Innovación de Procesos (SIP 2026)** mientras esperamos el
-cluster Kubernetes con GPUs reales.
+la cátedra de **Sistemas Distribuidos y Programación Paralela (SD 2026)** —
+UNLu DCB — mientras esperamos el cluster Kubernetes con GPUs reales.
 
 > **¿Sos estudiante?** Empezá por [`docs/GUIA.md`](docs/GUIA.md). Ahí está
 > todo: qué es esto, por qué se usa, cómo se setea, cómo se interpreta la
