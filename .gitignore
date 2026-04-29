@@ -8,5 +8,9 @@ examples/**/gpgpusim.config
 examples/**/*.icnt
 examples/**/_cuobjdump_*
 examples/**/_ptx_jit_*
+examples/**/_app_cuda_version_*
 examples/**/gpgpu_inst_stats.txt
 examples/**/*.log
+examples/**/*.ptx
+examples/**/*.ptxas
+examples/**/checkpoint_files/

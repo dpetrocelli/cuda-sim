@@ -6,6 +6,10 @@ FROM nvidia/cuda:11.7.1-devel-ubuntu20.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Argentina/Buenos_Aires
 
+# GPGPU-Sim necesita CUDA_INSTALL_PATH apuntando al toolkit.
+# En las imagenes oficiales nvidia/cuda esta en /usr/local/cuda.
+ENV CUDA_INSTALL_PATH=/usr/local/cuda
+
 # Dependencias de build de GPGPU-Sim
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
